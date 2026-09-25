@@ -1,15 +1,56 @@
 import { useEffect } from "react";
+import {
+  BookOpen,
+  Compass,
+  HeartHandshake,
+  Library,
+  LifeBuoy,
+  MessageCircle,
+  ShieldAlert,
+  Waves,
+} from "lucide-react";
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import { useApp } from "../context/AppContext";
 import { InstallAppButton } from "./InstallAppButton";
 
 const NAV_ITEMS = [
-  { to: "/", label: "此刻", mobileLabel: "此刻", end: true },
-  { to: "/rescue", label: "闪回急救", mobileLabel: "急救" },
-  { to: "/critic", label: "批判者挑战", mobileLabel: "批判" },
-  { to: "/grieve", label: "哀悼与情绪", mobileLabel: "哀悼" },
-  { to: "/learn", label: "了解自己", mobileLabel: "了解" },
-  { to: "/methods", label: "方法库", mobileLabel: "方法" },
+  {
+    to: "/",
+    label: "此刻",
+    mobileLabel: "此刻",
+    icon: Compass,
+    end: true,
+  },
+  {
+    to: "/rescue",
+    label: "闪回急救",
+    mobileLabel: "急救",
+    icon: LifeBuoy,
+  },
+  {
+    to: "/critic",
+    label: "批判者挑战",
+    mobileLabel: "批判",
+    icon: MessageCircle,
+  },
+  {
+    to: "/grieve",
+    label: "哀悼与情绪",
+    mobileLabel: "哀悼",
+    icon: HeartHandshake,
+  },
+  {
+    to: "/learn",
+    label: "了解自己",
+    mobileLabel: "了解",
+    icon: BookOpen,
+  },
+  {
+    to: "/methods",
+    label: "方法库",
+    mobileLabel: "方法",
+    icon: Library,
+  },
 ];
 
 export function Layout() {
@@ -31,11 +72,11 @@ export function Layout() {
         <div className="header-row">
           <Link className="brand" to="/" aria-label="回到此刻首页">
             <span className="brand-mark" aria-hidden="true">
-              此
+              <Compass size={22} strokeWidth={1.9} />
             </span>
             <span>
               <strong>回到此刻</strong>
-              <small>CPTSD 自助工具</small>
+              <small>安全、稳定、随时可停</small>
             </span>
           </Link>
 
@@ -49,7 +90,8 @@ export function Layout() {
                 end={item.end}
                 to={item.to}
               >
-                {item.label}
+                <item.icon size={17} aria-hidden="true" />
+                <span>{item.label}</span>
               </NavLink>
             ))}
           </nav>
@@ -66,7 +108,8 @@ export function Layout() {
               type="button"
               onClick={() => openGrounding("从任何地方回到当下")}
             >
-              一键接地
+              <Waves size={18} aria-hidden="true" />
+              <span>先接地</span>
             </button>
           </div>
         </div>
@@ -92,12 +135,16 @@ export function Layout() {
             end={item.end}
             to={item.to}
           >
+            <item.icon size={20} strokeWidth={1.9} aria-hidden="true" />
             <span>{item.mobileLabel}</span>
           </NavLink>
         ))}
       </nav>
 
       <footer className="global-footer">
+        <span className="footer-mark" aria-hidden="true">
+          <ShieldAlert size={18} />
+        </span>
         <p>
           这是结构化自助与心理教育工具，不替代药物、心理治疗、诊断或紧急服务。
         </p>

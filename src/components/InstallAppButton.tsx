@@ -1,3 +1,4 @@
+import { Download } from "lucide-react";
 import { usePwaInstall } from "../hooks/usePwaInstall";
 
 export function InstallAppButton() {
@@ -14,7 +15,8 @@ export function InstallAppButton() {
         type="button"
         onClick={install}
       >
-        安装到桌面
+        <Download size={17} aria-hidden="true" />
+        <span>安装到桌面</span>
       </button>
 
       {isHelpOpen && (

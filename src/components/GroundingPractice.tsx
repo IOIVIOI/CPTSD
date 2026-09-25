@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { ArrowRight, CircleCheck, ScanLine, Waves, Wind, X } from "lucide-react";
 import { useApp } from "../context/AppContext";
 
 type GroundingStage = "orient" | "breathe" | "scan" | "done";
@@ -88,7 +89,8 @@ export function GroundingPractice() {
             type="button"
             onClick={closeGrounding}
           >
-            停止
+            <X size={17} aria-hidden="true" />
+            <span>停止</span>
           </button>
         </div>
 
@@ -103,14 +105,16 @@ export function GroundingPractice() {
               type="button"
               onClick={() => setStage("breathe")}
             >
-              开始 3 次慢呼吸
+              <Wind size={18} aria-hidden="true" />
+              <span>开始 3 次慢呼吸</span>
             </button>
             <button
               className="button button-quiet button-wide"
               type="button"
               onClick={() => setStage("scan")}
             >
-              不做呼吸，直接做身体扫描
+              <ScanLine size={18} aria-hidden="true" />
+              <span>直接做身体扫描</span>
             </button>
           </section>
         )}
@@ -133,7 +137,8 @@ export function GroundingPractice() {
               type="button"
               onClick={() => setStage("scan")}
             >
-              跳到身体扫描
+              <ScanLine size={18} aria-hidden="true" />
+              <span>跳到身体扫描</span>
             </button>
           </section>
         )}
@@ -157,9 +162,17 @@ export function GroundingPractice() {
                 setScanIndex((current) => current + 1);
               }}
             >
-              {scanIndex === BODY_SCAN_PROMPTS.length - 1
-                ? "完成接地"
-                : "下一处"}
+              {scanIndex === BODY_SCAN_PROMPTS.length - 1 ? (
+                <>
+                  <CircleCheck size={18} aria-hidden="true" />
+                  <span>完成接地</span>
+                </>
+              ) : (
+                <>
+                  <span>下一处</span>
+                  <ArrowRight size={18} aria-hidden="true" />
+                </>
+              )}
             </button>
           </section>
         )}
@@ -175,7 +188,10 @@ export function GroundingPractice() {
               type="button"
               onClick={completeGrounding}
             >
-              {groundingRequest.required ? "继续刚才的流程" : "回到页面"}
+              <Waves size={18} aria-hidden="true" />
+              <span>
+                {groundingRequest.required ? "继续刚才的流程" : "回到页面"}
+              </span>
             </button>
             <button
               className="button button-quiet button-wide"
