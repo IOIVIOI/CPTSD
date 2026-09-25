@@ -2,6 +2,7 @@ import { HashRouter, Navigate, Route, Routes } from "react-router-dom";
 import { CrisisReferral } from "./components/CrisisReferral";
 import { GroundingPractice } from "./components/GroundingPractice";
 import { Layout } from "./components/Layout";
+import { PointerGlow } from "./components/PointerGlow";
 import { AppProvider } from "./context/AppContext";
 import { CriticPage } from "./pages/CriticPage";
 import { GrievePage } from "./pages/GrievePage";
@@ -29,6 +30,7 @@ export default function App() {
         </Routes>
         <GroundingPractice />
         <CrisisReferral />
+        <PointerGlow />
       </AppProvider>
     </HashRouter>
   );
