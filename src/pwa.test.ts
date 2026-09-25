@@ -20,7 +20,7 @@ describe("mobile PWA assets", () => {
     };
 
     expect(manifest.display).toBe("standalone");
-    expect(manifest.start_url).toBe("/cptsd/");
+    expect(manifest.start_url).toBe("/CPTSD/");
     expect(manifest.icons.some((icon) => icon.sizes === "192x192")).toBe(true);
     expect(manifest.icons.some((icon) => icon.sizes === "512x512")).toBe(true);
     expect(
