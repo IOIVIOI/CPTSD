@@ -1,0 +1,62 @@
+{
+  "name": "回到此刻｜CPTSD 自助工具",
+  "short_name": "回到此刻",
+  "description": "结构化、确定性的 CPTSD 自助工具，不替代专业治疗。",
+  "lang": "zh-CN",
+  "start_url": "/cptsd/",
+  "scope": "/cptsd/",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui", "browser"],
+  "orientation": "portrait-primary",
+  "background_color": "#fbf3ea",
+  "theme_color": "#b55f46",
+  "categories": ["health", "lifestyle", "medical"],
+  "icons": [
+    {
+      "src": "/cptsd/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/cptsd/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/cptsd/maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "闪回急救",
+      "short_name": "急救",
+      "description": "直接进入 13 步闪回急救",
+      "url": "/cptsd/#/rescue",
+      "icons": [
+        {
+          "src": "/cptsd/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "批判者挑战",
+      "short_name": "挑战",
+      "description": "直接进入内在批判者挑战",
+      "url": "/cptsd/#/critic",
+      "icons": [
+        {
+          "src": "/cptsd/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ]
+}
